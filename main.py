@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def start_program():
+    shuffle_directory = select_directory()
+
+def select_directory():
+    while True:
+        print("Please input the directory where to files are located,")
+        shuffle_directory = input(" that you want to shuffle: ")
+        if os.path.isdir(shuffle_directory):
+            break
+        print("Please enter a valid directory...")
+    print("Are you sure you want to shuffle: " + shuffle_directory)
+    question = input("Please enter Y(es) or N(o): ")
+    return shuffle_directory
+
+def yes_or_no_filter(question):
+    
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    start_program()
